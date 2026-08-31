@@ -43,11 +43,11 @@ In the remaining files, we provide scripts run on the command line for the pseud
 | File Name | Format     | Description |
 |---------------|----------|------------|
 | `SLE_SEF_regression_walkthrough_10_24_2025`      | `.R`  | Runs cell-type specific SEF regression modeling and testing; code to reproduce Figure 5 for a given cell-type (CD8+ T-cells as example) |
-| `SLE_compare_methods_10_19_2025`  | `.R`   | Procedural pipeline for pseudobulk methods; run on command line but also can be run on any `R`-compatible environments |
-| `SLE_table1_fig2_10_21_2025`  | `.R`   | Workflow to reproduce Table 1 numbers and Figure 2 |
-| `SLE_validation_comparison_perez_10_21_2025`  | `.R`   | Workflow to reproduce proportions in Table 2 |
-| `SLE_fig3_figS7_10_21_2025`  | `.R`   | Workflow to reproduce Figure 3; Figures S.5, S.6, S.7 |
-| `SLE_permutation_script_10_14_2025`         | `.R`   | Script to conduct permutation test and reproduce Figure 4  (*note: memory-intensive*); run on command line |
+| ``  | `.R`   | Procedural pipeline for pseudobulk methods; run on command line but also can be run on any `R`-compatible environments |
+| ``  | `.R`   | Workflow to reproduce Table 1 numbers and Figure 2 |
+| ``  | `.R`   | Workflow to reproduce proportions in Table 2 |
+| ``  | `.R`   | Workflow to reproduce Figure 3; Figures S.5, S.6, S.7 |
+| `gen_sim_obj_EFFECT`  | `.R`   | generate simulated expression data based on effect size |
 | `main_github_10_14_2025`  | `.R`   | `main` file defining functions used in real data analysis and downstream analysis |
 
 ---
@@ -60,13 +60,11 @@ In this section, we overview the formatted data objects used in our simulations 
 | Object Name | Format     | Description |
 |---------------|----------|------------|
 | `covariate_data`           | `.csv`     | Covariate data with donor ID and disease status specification |
-| `CELLTYPE_seurat_exprMat` | `.RDS`  | Library-size corrected counts matrix (genes x cell) |
-| `CELLTYPE_seurat_metadata`| `.RDS`   | Contains metadata from original data (cell-level rows) |
-| `CELLTYPE_donors_for_genes_processed`      | `.RDS`  | List of arrays, each element contains an array of donors that have at least 100 cells and 20% non-zero values for all genes tested per cell type |
+| `CELLTYPE_lcf_matrix` | `.RDS`  | Library-size corrected counts matrix (genes x cell) |
+| `CELLTYPE_new_metadata`| `.RDS`   | Contains metadata from original data (cell-level rows) |
 | `pb_CELLTYPE_sObj`         | `.RDS`   | Pseudobulked Seurat object after using standard `AggregateExpression()` |
-| `sef_CELLTYPE_fixed_pvals`         | `.csv`   | Cell type-specific differentially distributed genes with adjusted p-values (Bonferroni) using SEF regression |
-| `pb_CELLTYPE_10_15_2025`         | `.csv`   | Cell type specific DEGs with adjusted p-values (Bonferroni) pseudobulked data and log fold change values |
-| `CELLTYPE_enriched_pathways`       | `.csv`   | Includes `clusterProfiler` enrichment analysis results and used to re-construct barplots from original analysis |
-| `perez_validation_DEGs`         | `.csv`   | File including DEGs from original Perez et al (2022) study's Supplementary Table 3 |
+| ``         | `.csv`   | Cell type-specific differentially distributed genes with adjusted p-values (Bonferroni) using SEF regression |
+| ``         | `.csv`   | Cell type specific DEGs with adjusted p-values (Bonferroni) pseudobulked data and log fold change values |
+| ``       | `.csv`   | Includes `clusterProfiler` enrichment analysis results and used to re-construct barplots from original analysis |
 
 ---
