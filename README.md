@@ -17,12 +17,13 @@ The data used in our analysis for each cell type can be accessed via Zenodo usin
 We briefly explain the file purpose in our data analysis and simulations, which are split into the `RDA` and `simulations` directories in the repository. In each file, we provide a brief description for each of the functions used.
 
 #### Simulations
-The simulations section is split into three `R` files. We have a main file that defines all functions used in simulations. The remaining two files contain the main simulation results and that from the supplementary materials.
+The simulations section is split into separate `R` files  for distinct functions. First, we have a main file that defines all functions used in simulations. We then have files generate the expression data. In addition to these core files, we include auxiliary files that run the SEF tests for the mean, variance, and modality shift settings. We include the simulation schemes for competing methods for pseudobulk and cell-level methods. Lastly, we include supplementary codes as well, including tests involving discrete carriers, bin size sensitivity, and comparisons with a direct moment test.
 
 | File Name | Format     | Description |
 |---------------|----------|------------|
 | `simulations_main_10_13_2025`  | `.R`   | `main` file defining functions used in simulations |
 | `refined_simulations_10_13_2025`  | `.R`   | Workflow for Figure 1: QQ-Plots and power analysis in main contents for Poisson-Gamma and ZINB |
+| `gen_sim_obj_EFFECT`  | `.R`   | generate simulated expression data based on effect size |
 | `refined_supp_simulations_10_13_2025`  | `.R`   | Supplementary tests and figure construction code (Figures S.1-S.4) |
 ---
 
@@ -42,13 +43,12 @@ In the remaining files, we provide scripts run on the command line for the pseud
 
 | File Name | Format     | Description |
 |---------------|----------|------------|
-| `SLE_SEF_regression_walkthrough_10_24_2025`      | `.R`  | Runs cell-type specific SEF regression modeling and testing; code to reproduce Figure 5 for a given cell-type (CD8+ T-cells as example) |
-| ``  | `.R`   | Procedural pipeline for pseudobulk methods; run on command line but also can be run on any `R`-compatible environments |
+| `merged_newCov_revisions_RDA_final`      | `.R`  | Runs cell-type specific SEF regression modeling and testing; provides enrichment analyses |
+| `revisions_pseudobulk_comparison_5_5_2026`  | `.R`   | Procedural pipeline for pseudobulk methods |
 | ``  | `.R`   | Workflow to reproduce Table 1 numbers and Figure 2 |
 | ``  | `.R`   | Workflow to reproduce proportions in Table 2 |
 | ``  | `.R`   | Workflow to reproduce Figure 3; Figures S.5, S.6, S.7 |
-| `gen_sim_obj_EFFECT`  | `.R`   | generate simulated expression data based on effect size |
-| `main_github_10_14_2025`  | `.R`   | `main` file defining functions used in real data analysis and downstream analysis |
+| `merged_self_contained_RDA_final`  | `.R`   | self-contained `main` file defining functions used in real data analysis and downstream analysis |
 
 ---
 
