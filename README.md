@@ -31,15 +31,6 @@ The simulations section is split into separate `R` files  for distinct functions
 In the real data analysis section, we provide code to demonstrate the main real data contributions using the proposed SEF methodology as well as replicate the key figures with respect to these data.
 This includes the regression pipeline and enrichment figures.
 
-Within the `walkthrough` directory of the repository, we include the main function file, denoted as `main_github_10_14_2025.R`, which defines all the functions needed to conduct our analysis.
-We apply these in practice in the walkthrough titled `SLE_SEF_regression_walkthrough_10_24_2025.R`, where we test for distributional differences between SLE and control populations with the CD8+ T-cell type.
-This walkthrough also includes code snippets to reproduce enrichment analysis. Results can be replicated for the two other cell types. 
-
-In `SLE_fig3_10_21_2025.R`, we provide code snippets that reproduce figures 3, S.5, S.6, and S.7,
-which illustrate carrier densities, individual-level densities, and group-wise density comparisons for uniquely-identified genes (S100A4, TSC22D3, MT2A, and LTB.)
-
-In the remaining files, we provide scripts run on the command line for the pseudobulk data and related comparisons. 
-
 
 | File Name | Format     | Description |
 |---------------|----------|------------|
