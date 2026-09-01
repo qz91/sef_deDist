@@ -21,10 +21,11 @@ The simulations section is split into separate `R` files  for distinct functions
 
 | File Name | Format     | Description |
 |---------------|----------|------------|
-| `simulations_main_10_13_2025`  | `.R`   | `main` file defining functions used in simulations |
-| `refined_simulations_10_13_2025`  | `.R`   | Workflow for Figure 1: QQ-Plots and power analysis in main contents for Poisson-Gamma and ZINB |
-| `gen_sim_obj_EFFECT`  | `.R`   | generate simulated expression data based on effect size |
-| `refined_supp_simulations_10_13_2025`  | `.R`   | Supplementary tests and figure construction code (Figures S.1-S.4) |
+| `lpc_simulation_main_5_8_2026.R`  | `.R`   | `main` file defining functions used in simulations |
+| `lpc_revisions_simulation_discrete_6_7_2026`  | `.R`   | `main` file defining discrete-specific functions used in simulations |
+| `lpc_main_NB_4_30_2026`  | `.R`   | `main` file used to define data  generation for `gen_sim_obj_EFFECT` scripts |
+| `gen_sim_obj_EFFECT`  | `.R`   | generate simulated expression data based on effect size (modal_NB for modalitiy, strong_effect for mean, small_effect for variance) |
+| `lpc_generalized_sef_omnicarrier`  | `.R`   | Workflow used on computing cluster to conduct SEF framework in empirical FDR test |
 ---
 
 #### Real Data Analysis
@@ -36,10 +37,10 @@ This includes the regression pipeline and enrichment figures.
 |---------------|----------|------------|
 | `merged_newCov_revisions_RDA_final`      | `.R`  | Runs cell-type specific SEF regression modeling and testing; provides enrichment analyses |
 | `revisions_pseudobulk_comparison_5_5_2026`  | `.R`   | Procedural pipeline for pseudobulk methods |
-| ``  | `.R`   | Workflow to reproduce Table 1 numbers and Figure 2 |
-| ``  | `.R`   | Workflow to reproduce proportions in Table 2 |
-| ``  | `.R`   | Workflow to reproduce Figure 3; Figures S.5, S.6, S.7 |
 | `merged_self_contained_RDA_final`  | `.R`   | self-contained `main` file defining functions used in real data analysis and downstream analysis |
+| `bootstrap_RDA`  | `.R`   | Workflow to reproduce bootstrap analysis of CD8+ T-cells |
+| `b_cells_explore`  | `.R`   | Basic QC metrics for B cells as requested in revisions|
+| ``  | `.R`   | Workflow to reproduce Figure 3; Figures S.5, S.6, S.7 |
 
 ---
 
