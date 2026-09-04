@@ -60,8 +60,7 @@ In this section, we overview the formatted data objects used in our simulations 
 | `CELLTYPE_lcf_matrix` | `.RDS`  | Library-size corrected counts matrix (genes x cell) |
 | `CELLTYPE_new_metadata`| `.RDS`   | Contains metadata from original data (cell-level rows) |
 | `pb_CELLTYPE_sObj`         | `.RDS`   | Pseudobulked Seurat object after using standard `AggregateExpression()` |
-| ``         | `.csv`   | Cell type-specific differentially distributed genes with adjusted p-values (Bonferroni) using SEF regression |
-| ``         | `.csv`   | Cell type specific DEGs with adjusted p-values (Bonferroni) pseudobulked data and log fold change values |
-| ``       | `.csv`   | Includes `clusterProfiler` enrichment analysis results and used to re-construct barplots from original analysis |
+| `CELL_TYPE_donors_used`         | `.RDS`   | Donors used in each cell type-specific analyses |
+| `CELLTYPE_enrichment_07_01_2026`       | `.csv`   | `clusterProfiler` enrichment analysis results; used to re-construct figures |
 
 ---
