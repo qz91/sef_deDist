@@ -14,7 +14,7 @@ The data used in our analysis for each cell type can be accessed via Zenodo usin
 ---
 
 ### 2. File Overview
-We briefly explain the file purpose in our data analysis and simulations, which are split into the `RDA` and `simulations` directories in the repository. In each file, we provide a brief description for each of the functions used.
+We briefly explain the file purpose in our data analysis and simulations, which are split into the `RDA` and `simulations` directories in the repository.
 
 #### Simulations
 The simulations section is split into separate `R` files  for distinct functions. First, we have a main file that defines all functions used in simulations. We then have files generate the expression data. In addition to these core files, we include auxiliary files that run the SEF tests for the mean, variance, and modality shift settings. We include the simulation schemes for competing methods for pseudobulk and cell-level methods. Lastly, we include supplementary codes as well, including tests involving discrete carriers, bin size sensitivity, and comparisons with a direct moment test.
