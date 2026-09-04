@@ -41,6 +41,8 @@ This includes the regression pipeline and enrichment figures.
 | `merged_newCov_revisions_RDA_final`      | `.R`  | Runs cell-type specific SEF regression modeling and testing; provides enrichment analyses |
 | `revisions_pseudobulk_comparison_5_5_2026`  | `.R`   | Procedural pipeline for pseudobulk methods |
 | `merged_self_contained_RDA_final`  | `.R`   | self-contained `main` file defining functions used in real data analysis and downstream analysis |
+| `run_pseudobulk_final`  | `.R`   | Script to generate results from comparison pseudobulk analysis |
+| `prepare_pseudobulk_final`  | `.R`   | Prepare pseudobulk data |
 | `bootstrap_RDA`  | `.R`   | Workflow to reproduce bootstrap analysis of CD8+ T-cells. Results can be found in the subdirectory `RDA/aux_response/cd8_bootstrap_stability` |
 | `b_cells_explore`  | `.R`   | Basic QC metrics for B cells as requested in revisions|
 | ``  | `.R`   | Workflow to reproduce Figure 3; Figures S.5, S.6, S.7 |
