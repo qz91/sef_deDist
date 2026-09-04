@@ -38,7 +38,7 @@ This includes the regression pipeline and enrichment figures.
 
 | File Name | Format     | Description |
 |---------------|----------|------------|
-| `merged_newCov_revisions_RDA_final`      | `.R`  | Runs cell-type specific SEF regression modeling and testing; provides enrichment analyses |
+| `merged_newCov_revisions_RDA_final`      | `.R`  | Runs cell-type specific SEF regression modeling and testing; provides general enrichment analyses across all cell types as well as unique CD8$^+$ enrichment |
 | `revisions_pseudobulk_comparison_5_5_2026`  | `.R`   | Procedural pipeline for pseudobulk methods |
 | `merged_self_contained_RDA_final`  | `.R`   | self-contained `main` file defining functions used in real data analysis and downstream analysis |
 | `run_pseudobulk_final`  | `.R`   | Script to generate results from comparison pseudobulk analysis |
