@@ -59,8 +59,10 @@ In this section, we overview the formatted data objects used in our simulations 
 | `covariate_data`           | `.csv`     | Covariate data with donor ID and disease status specification |
 | `CELLTYPE_lcf_matrix` | `.RDS`  | Library-size corrected counts matrix (genes x cell) |
 | `CELLTYPE_new_metadata`| `.RDS`   | Contains metadata from original data (cell-level rows) |
-| `pb_CELLTYPE_sObj`         | `.RDS`   | Pseudobulked Seurat object after using standard `AggregateExpression()` |
 | `CELL_TYPE_donors_used`         | `.RDS`   | Donors used in each cell type-specific analyses |
 | `CELLTYPE_enrichment_07_01_2026`       | `.csv`   | `clusterProfiler` enrichment analysis results; used to re-construct figures |
+| `COMPARISON_CELLTYPE_sig_pvals`         | `.csv`   | Significant genes identified by a compared method (DESeq2, edgeR, Wilcoxon, MAST) after Bonferroni-correction |
+| `pb_CELLTYPE_matrix`         | `.RDS`   | Pseudobulked expression matrix after using standard `AggregateExpression()` |
+| `pb_CELLTYPE_metadata`         | `.RDS`   | Pseudobulk metadata |
 
 ---
