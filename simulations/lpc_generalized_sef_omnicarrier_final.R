@@ -6,7 +6,7 @@ library(pbmcapply)
 library(BiocParallel)
 library(ggplot2)
 library(moments)
-source("lpc_simulation_main_5_8_2026_finall.R")
+source("lpc_simulation_main_5_8_2026_final.R")
 source("lpc_revisions_simulation_discrete_6_7_2026_final.R")
 n_cores = 25
 n_sim = 50
