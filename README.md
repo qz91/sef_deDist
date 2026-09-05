@@ -55,7 +55,6 @@ In this section, we overview the formatted data objects used in our simulations 
 
 | Object Name | Format     | Description |
 |---------------|----------|------------|
-| `covariate_data`           | `.csv`     | Covariate data with donor ID and disease status specification |
 | `CELLTYPE_lcf_matrix` | `.RDS`  | Library-size corrected counts matrix (genes x cell) |
 | `CELLTYPE_new_metadata`| `.RDS`   | Contains metadata from original data (cell-level rows) |
 | `CELL_TYPE_donors_used`         | `.RDS`   | Donors used in each cell type-specific analyses |
