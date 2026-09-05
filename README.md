@@ -29,6 +29,8 @@ The simulations section is split into separate `R` files  for distinct functions
 | `lpc_pval_combination_generalized_(ss)_final`  | `.R`   | Direct-moment testing comparison and p-value combination test (ss) at varying sample sizes |
 | `lpc_NB_modality_analysis_final`  | `.R`   | `main` file defining modality-specific functions used in simulations  |
 | `lpc_NB_modal_scaled_SEF_analysis_final`  | `.R`   | Workflow used on computing cluster to conduct SEF framework in empirical FDR test for modality shift |
+| `make_table_5_25_2026_final`  | `.R`   | Code to build table of results and plot the empirical FDR results for mean and variance shift |
+| `make_table_modal_6_16_26_final`  | `.R`   | Code to build table of results and plot the empirical FDR results for modality shift |
 ---
 
 #### Real Data Analysis
