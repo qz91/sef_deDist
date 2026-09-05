@@ -12,18 +12,18 @@ cell_type = "cd8"
 
 ## ----- otherwise, load data -----
 if(cell_type == "cd4"){
-  lcf_matrix = readRDS("/Users/zaqian/Desktop/density_estimation/JASA_revision_3_09_2026/new_seurat/cd4_lcf_matrix.RDS")
-  meta_name = paste0("/Users/zaqian/Desktop/density_estimation/JASA_revision_3_09_2026/new_seurat/", cell_type,"_new_metadata.RDS")
+  lcf_matrix = readRDS("cd4_lcf_matrix.RDS")
+  meta_name = paste0(cell_type,"_new_metadata.RDS")
   sObj_meta = readRDS(meta_name)
   
 } else if (cell_type == "cd8"){
-  lcf_matrix = readRDS("/Users/zaqian/Desktop/density_estimation/JASA_revision_3_09_2026/new_seurat/cd8_lcf_matrix.RDS")
-  meta_name = paste0("/Users/zaqian/Desktop/density_estimation/JASA_revision_3_09_2026/new_seurat/", cell_type,"_new_metadata.RDS")
+  lcf_matrix = readRDS("cd8_lcf_matrix.RDS")
+  meta_name = paste0(cell_type,"_new_metadata.RDS")
   sObj_meta = readRDS(meta_name)
   
 } else if (cell_type == "cM"){
-  lcf_matrix = readRDS("/Users/zaqian/Desktop/density_estimation/JASA_revision_3_09_2026/new_seurat/cM_lcf_matrix.RDS")
-  meta_name = paste0("/Users/zaqian/Desktop/density_estimation/JASA_revision_3_09_2026/new_seurat/", cell_type,"_new_metadata.RDS")
+  lcf_matrix = readRDS("cM_lcf_matrix.RDS")
+  meta_name = paste0(cell_type,"_new_metadata.RDS")
   sObj_meta = readRDS(meta_name)
 }
 cell_counts = sObj_meta %>%
@@ -57,7 +57,7 @@ stopifnot(
 lcf_filtered = filter_SLE(lcf_matrix, donor_ids, min_cells = 300, min_prop = 0.03)
 genes_of_interest = lcf_filtered$genes
 donors_keep = lcf_filtered$donors
-# donors_name = paste0(cell_type,"_donors_used.RDS")
+# donors_name = paste0(cell_type,"_donors_used.RDS") # save data
 # saveRDS(donors_keep, donors_name)
 sObj_meta = sObj_meta[sObj_meta$donor_id %in% lcf_filtered$donors, ]
 lcf2= lcf_filtered$matrix
@@ -157,8 +157,7 @@ ego = enrichGO(gene = gene_df$ENTREZID, OrgDb = orgDb,
 
 viewer = c("ID","Description", "RichFactor","FoldEnrichment","p.adjust","qvalue", "geneID","Count")
 sig_ego = ego@result[ego@result$p.adjust < 0.1,viewer]
-date_tag = format(Sys.Date(), "%m_%d_%Y")
-ego_name = paste0(cell_type,"_p", p,"_sef_unique_enrichment_", date_tag,".csv")
+ego_name = paste0(cell_type,"_p", p,"_sef_unique_enrichment.csv")
 write.csv(sig_ego, file.path(enrich_dir, ego_name))
 
 
@@ -281,7 +280,7 @@ for (cell_type in cell_types) {
 }
 overlap_results
 
-# ----- get counts per donor -----
+# ----- get counts per donor used in analysis -----
 cell_types = c("cd8", "cd4", "cM")
 for (ct in cell_types) {
   cts_donors = read.csv(file.path(source_dir,"counts_by_donor",paste0(ct, "_cell_counts_by_donor.csv")),row.names = 1)
