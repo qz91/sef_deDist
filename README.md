@@ -62,5 +62,7 @@ In this section, we overview the formatted data objects used in our simulations 
 | `COMPARISON_CELLTYPE_sig_pvals`         | `.csv`   | Significant genes identified by a compared method (DESeq2, edgeR, Wilcoxon, MAST) after Bonferroni-correction |
 | `pb_CELLTYPE_matrix`         | `.RDS`   | Pseudobulked expression matrix after using standard `AggregateExpression()` |
 | `pb_CELLTYPE_metadata`         | `.RDS`   | Pseudobulk metadata |
+| `gauss_n_nt_sef_hotelling_summary`         | `.csv`   | Direct moment comparison `.csv` file |
+| `DE2_sigmasq_0p7(9)_shared_sigmaC_0p8_metrics_list`         | `.RDS`   | Per-seed metrics for direct moment test |
 
 ---
