@@ -17,7 +17,7 @@ The data used in our analysis for each cell type can be accessed via Zenodo usin
 We briefly explain the file purpose in our data analysis and simulations, which are split into the `RDA` and `simulations` directories in the repository.
 
 #### Simulations
-The simulations section is split into separate `R` files  for distinct functions. First, we have a main file that defines all functions used in simulations. We then have files generate the expression data. In addition to these core files, we include auxiliary files that run the SEF tests for the mean, variance, and modality shift settings. We include the simulation schemes for competing methods for pseudobulk and cell-level methods. Lastly, we include supplementary codes as well, including tests involving discrete carriers, bin size sensitivity, and comparisons with a direct moment test.
+The simulations section is split into separate `R` files  for distinct functions. First, we have a main file that defines all functions used in simulations. We then have files generate the expression data. In addition to these core files, we include auxiliary files that run the SEF tests for the mean, variance, and modality shift settings. We include the simulation schemes for competing methods for pseudobulk and cell-level methods. Lastly, we include supplementary codes as well, including tests involving discrete carriers, bin size sensitivity, and comparisons with a direct moment test. Associated results can be found in the subdirectories.
 
 | File Name | Format     | Description |
 |---------------|----------|------------|
@@ -34,8 +34,7 @@ The simulations section is split into separate `R` files  for distinct functions
 ---
 
 #### Real Data Analysis
-In the real data analysis section, we provide code to demonstrate the main real data contributions using the proposed SEF methodology as well as replicate the key figures with respect to these data.
-This includes the regression pipeline and enrichment figures.
+In the real data analysis section, we provide code to demonstrate the main real data contributions using the proposed SEF methodology as well as replicate the key figures with respect to these data. This includes the regression pipeline and enrichment figures. Associated real data results can be found in the subdirectories of `RDA`.
 
 
 | File Name | Format     | Description |
@@ -59,13 +58,8 @@ In this section, we overview the formatted data objects used in our simulations 
 |---------------|----------|------------|
 | `CELLTYPE_lcf_matrix` | `.RDS`  | Library-size corrected counts matrix (genes x cell) |
 | `CELLTYPE_new_metadata`| `.RDS`   | Contains metadata from original data (cell-level rows) |
-| `CELL_TYPE_donors_used`         | `.RDS`   | Donors used in each cell type-specific analyses |
-| `CELLTYPE_enrichment_07_01_2026`       | `.csv`   | `clusterProfiler` enrichment analysis results; used to re-construct figures |
-| `COMPARISON_CELLTYPE_sig_pvals`         | `.csv`   | Significant genes identified by a compared method (DESeq2, edgeR, Wilcoxon, MAST) after Bonferroni-correction |
 | `pb_CELLTYPE_matrix`         | `.RDS`   | Pseudobulked expression matrix after using standard `AggregateExpression()` |
 | `pb_CELLTYPE_metadata`         | `.RDS`   | Pseudobulk metadata |
-| `log_CELLTYPE_p_2_sig_pvals_6_8_2026`         | `.csv`   | Cell type-specific results for log-transformed data found in `RDA/log_transform` |
-| `gauss_n_nt_sef_hotelling_summary`         | `.csv`   | Direct moment comparison `.csv` file |
-| `DE2_sigmasq_0p7(9)_shared_sigmaC_0p8_metrics_list`         | `.RDS`   | Per-seed metrics for direct moment test |
+
 
 ---
