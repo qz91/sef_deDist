@@ -1,0 +1,13 @@
+"n_samplesize","n1","n2","case_id","sigma_sq_DE_G2","sigmaC_sq_DE_G2","method","p","alpha","FDR","TPR","FDP","n_failed"
+10,10,10,"DE2_sigmasq_0p7_shared_sigmaC_0p8",0.7,0.8,"hotelling",2,0.05,0.01,2e-04,0.01,0
+10,10,10,"DE2_sigmasq_0p9_shared_sigmaC_0p8",0.9,0.8,"hotelling",2,0.05,0.01,4e-04,0.01,0
+10,10,10,"DE2_sigmasq_0p7_shared_sigmaC_0p8",0.7,0.8,"sef",2,0.05,0.352895800911559,0.2126,0.352895800911559,0
+10,10,10,"DE2_sigmasq_0p9_shared_sigmaC_0p8",0.9,0.8,"sef",2,0.05,0.280136878575833,0.3792,0.280136878575833,0
+10,10,10,"DE2_sigmasq_0p7_shared_sigmaC_0p8",0.7,0.8,"hotelling",3,0.05,0.02,8e-04,0.02,0
+10,10,10,"DE2_sigmasq_0p9_shared_sigmaC_0p8",0.9,0.8,"hotelling",3,0.05,0.02,0.002,0.02,0
+10,10,10,"DE2_sigmasq_0p7_shared_sigmaC_0p8",0.7,0.8,"sef",3,0.05,0.308954860559118,0.1678,0.308954860559118,0
+10,10,10,"DE2_sigmasq_0p9_shared_sigmaC_0p8",0.9,0.8,"sef",3,0.05,0.24108650705422,0.3186,0.24108650705422,0
+10,10,10,"DE2_sigmasq_0p7_shared_sigmaC_0p8",0.7,0.8,"hotelling",4,0.05,0.025,6e-04,0.025,0
+10,10,10,"DE2_sigmasq_0p9_shared_sigmaC_0p8",0.9,0.8,"hotelling",4,0.05,0.025,8e-04,0.025,0
+10,10,10,"DE2_sigmasq_0p7_shared_sigmaC_0p8",0.7,0.8,"sef",4,0.05,0.217594877344877,0.067,0.217594877344877,0
+10,10,10,"DE2_sigmasq_0p9_shared_sigmaC_0p8",0.9,0.8,"sef",4,0.05,0.184802742965669,0.165,0.184802742965669,0
