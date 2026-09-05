@@ -45,7 +45,6 @@ This includes the regression pipeline and enrichment figures.
 | `prepare_pseudobulk_final`  | `.R`   | Prepare pseudobulk data |
 | `bootstrap_RDA`  | `.R`   | Workflow to reproduce bootstrap analysis of CD8+ T-cells. Results can be found in the subdirectory `RDA/aux_response/cd8_bootstrap_stability` |
 | `b_cells_explore`  | `.R`   | Basic QC metrics for B cells as requested in revisions|
-| ``  | `.R`   | Workflow to reproduce Figure 3; Figures S.5, S.6, S.7 |
 
 ---
 
