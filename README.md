@@ -31,6 +31,9 @@ The simulations section is split into separate `R` files  for distinct functions
 | `lpc_NB_modal_scaled_SEF_analysis_final`  | `.R`   | Workflow used on computing cluster to conduct SEF framework in empirical FDR test for modality shift |
 | `make_table_5_25_2026_final`  | `.R`   | Code to build table of results and plot the empirical FDR results for mean and variance shift (Figure 6) |
 | `make_table_modal_6_16_26_final`  | `.R`   | Code to build table of results and plot the empirical FDR results for modality shift (Figure 7b) |
+| `make_combined_tables_7_9_26_final`  | `.R`   | Code to make combined table for modality shift (Figure 7a + 7b) |
+| `make_discrete_comparison_6_26_2026_final`  | `.R`   | Code used to build discrete comparison (Figure S.11) |
+
 ---
 
 #### Real Data Analysis
