@@ -132,6 +132,7 @@ plt_name = "NB_manu_modal_res.pdf"
 #   height = 5
 # )
 
+saveRDS(plt, "NB_manu_modal_gg.rds")
 
 # ----- make table for p = 2, 3, 4, 5 -----
 load.dir = file.path("/Users/zaqian/Desktop/finalSims/modal")
