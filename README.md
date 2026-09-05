@@ -9,7 +9,7 @@ We provide information on the structure of downstream analysis and reproducibili
 ### 1. Data Overview
 #### Single Cell Data
 
-The data used in our analysis for each cell type can be accessed via Zenodo using the following [link](https://zenodo.org/records/17402494?preview=1&token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjM0MzNkNDE1LWY4ZTctNDVhYi1hODk5LWJmNzhjNzg4MDUxNyIsImRhdGEiOnt9LCJyYW5kb20iOiI1OTVhOGVjZTBkYmZkZjBjMDA2ZTY4ZTBmNmVjN2Q3NiJ9.ONISAR5Zgx5GZ0odRZKmfSKmKTzBUTRyZ250S-hCc18EzXopSVeq12rdOqvJt_VgHZaHObG8x909Sya_aV9CVQ).
+The data used in our analysis for each cell type can be accessed via Zenodo using the following [link](https://zenodo.org/records/21989615?preview=1&token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6ImEwZWU3ZjYxLTE5OWQtNGUyNC04MDJlLTRjZDgxN2FlMTViZCIsImRhdGEiOnt9LCJyYW5kb20iOiIwZGMxMjQ5MjQ4NDRmYjBjNzFlZTM2NGZkNmRhMGVhNCJ9.M0mhxGLE2v3iJX6Nwzf8a67buXPi_Xa9c_ET2x1ym_ETQZxj69k1xrWGVTT4h6yElOLZ429aye8bvP0BWeVlxA).
 
 ---
 
