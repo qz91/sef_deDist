@@ -98,3 +98,69 @@ wilcox_res = data.frame(
 head(wilcox_res)
 sum(wilcox_res$bonferroni < 0.05)
 
+# ----- pseudobulk-specific -----
+p = 2
+cell_type = "cd8"
+if(p == 2){
+  df_name = paste0(cell_type,"_sef_pvals_5_1_2026.csv")
+} else if (p == 3){
+  df_name = paste0(cell_type,"_p_",p,"_sef_pvals_5_1_2026.csv")
+}
+sig = read.csv(df_name, row.names = 1)
+
+deseq_name = paste0("deseq_",cell_type,"_sig_pvals_4_20_2026.csv")
+sig_deseq = read.csv(deseq_name, row.names = 1)
+edgeR_name = paste0("edgeR_",cell_type,"_sig_pvals_4_20_2026.csv")
+sig_edgeR = read.csv(edgeR_name, row.names = 1)
+wilcox_name = paste0("wilcox_",cell_type,"_sig_pvals_5_4_2026.csv")
+sig_wilcox = read.csv(wilcox_name, row.names = 1)
+
+c(dim(sig_edgeR), dim(sig_deseq), dim(sig_wilcox), dim(sig))
+
+setdiff(row.names(sig), row.names(sig_edgeR))
+length(setdiff(row.names(sig), row.names(sig_edgeR)))
+length(intersect(row.names(sig), row.names(sig_edgeR)))
+length(setdiff(row.names(sig_edgeR), row.names(sig)))
+
+
+setdiff(row.names(sig), row.names(sig_deseq)) 
+length(intersect(row.names(sig), row.names(sig_deseq)))
+length(setdiff(row.names(sig), row.names(sig_deseq)))
+length(setdiff(row.names(sig_deseq), row.names(sig)))
+setdiff(row.names(sig_deseq), row.names(sig))
+
+setdiff(row.names(sig), sig_wilcox$gene) 
+setdiff(sig_wilcox$gene, row.names(sig))
+length(intersect(row.names(sig), sig_wilcox$gene))
+length(setdiff(row.names(sig), sig_wilcox$gene))
+length(setdiff(sig_wilcox$gene, row.names(sig)))
+
+u_edgeR = setdiff(row.names(sig_edgeR), row.names(sig))
+unique_edgeR = sig_edgeR[u_edgeR,]
+u_deseq = setdiff(row.names(sig_deseq), row.names(sig))
+unique_deseq = sig_deseq[u_deseq,]
+unique_deseq$logFC = unique_deseq$log2FoldChange
+u_wilcox = setdiff(sig_wilcox$gene, row.names(sig))
+unique_wilcox = subset(sig_wilcox, gene %in% u_wilcox)
+
+# ----- make volcano plots -----
+get_volcano_plot = function(df, pval_col = "bonferroni", fc_thresh = 0.5, pval_thresh = 0.05, p_title = "Volcano Plot") {
+  df$neg_log10_pval = -log10(df[,pval_col])
+  ggplot(df, aes(x = logFC, y = neg_log10_pval)) +
+    geom_point(color = "cornflowerblue", alpha = 0.8, size = 2) +
+    geom_vline(xintercept = c(-fc_thresh, fc_thresh),
+               linetype = "dashed", color = "red") +
+    geom_hline(yintercept = -log10(pval_thresh),
+               linetype = "dashed", color = "black") +
+    theme_minimal() +
+    labs(
+      x = "log2 Fold Change",
+      y = "-log10(adjusted p-value)",
+      title = p_title
+    ) +
+    theme(plot.title = element_text(hjust = 0.5))
+}
+
+plt1 = get_volcano_plot(df = unique_edgeR, pval_col = "bonferroni", p_title = "CD8+ edgeR-specific")
+plt2 = get_volcano_plot(df = unique_deseq, pval_col = "bonferroni", p_title = "CD8+ DESeq2-specific")
+plt3 = get_volcano_plot(df = unique_wilcox, pval_col = "bonferroni", p_title = "CD8+ Wilcoxon-specific")
