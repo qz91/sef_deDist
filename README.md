@@ -26,7 +26,7 @@ The simulations section is split into separate `R` files  for distinct functions
 | `lpc_main_NB_4_30_2026`  | `.R`   | `main` file used to define data  generation for `gen_sim_obj_EFFECT` scripts |
 | `gen_sim_obj_EFFECT`  | `.R`   | generate simulated expression data based on effect size (modal_NB for modalitiy, strong_effect for mean, small_effect for variance) |
 | `lpc_generalized_sef_omnicarrier`  | `.R`   | Workflow used on computing cluster to conduct SEF framework in empirical FDR test for mean and variance shift |
-| `lpc_pval_combination_generalized_(ss)_final`  | `.R`   | P-value combination test at varying sample sizes |
+| `lpc_pval_combination_generalized_(ss)_final`  | `.R`   | Direct-moment testing comparison and p-value combination test (ss) at varying sample sizes |
 | `lpc_NB_modality_analysis_final`  | `.R`   | `main` file defining modality-specific functions used in simulations  |
 | `lpc_NB_modal_scaled_SEF_analysis_final`  | `.R`   | Workflow used on computing cluster to conduct SEF framework in empirical FDR test for modality shift |
 ---
