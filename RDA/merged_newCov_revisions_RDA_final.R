@@ -115,6 +115,25 @@ dir.create(pval_dir, recursive = TRUE, showWarnings = FALSE)
 date_tag = format(Sys.Date(), "%m_%d_%Y")
 write.csv(sig, file.path(pval_dir, paste0(cell_type,"_p_", p, "_sef_pvals_",date_tag,".csv")))
 
+# ----- get group comparison plots -----
+cell_type = "cd8"
+new_sef = readRDS(paste0("res_",cell_type,"_p_",p,"_sef_5_1_2026.RDS")) # labeled by date
+if(cell_type == "cd8"){ # NKG7, HLA-A, GZMH fpr Figure 2; B2M, CD69, S100A4, SRGN, GZMA, ANXA1 for Figure 4
+  cell_type_DD_genes = c(,"HLA-A","GZMH", "NKG7", "B2M", "CD69", "S100A4","SRGN","GZMA", "ANXA1")
+} else if(cell_type == "cd4"){ 
+  cell_type_DD_genes = c("LY6E","LTB","CD69")
+} else if(cell_type == "cM"){ # ISG, IGI6, IFITM3 are all top 15 genes  based on p-value
+  cell_type_DD_genes = c("IFI6", "ISG15","IFITM3")
+}
+
+for(g in cell_type_DD_genes){
+  plt_g = group_model_comparison_plot(new_sef, gene = g)
+  plt_name = paste0(cell_type,"_",g,"_comparison_5_2_2026.pdf")
+  pdf(plt_name)
+  print(plt_g)
+  dev.off()
+}
+
 
 # ----- enrichment analysis -----
 cell_type = "cd8" # options include cd8, cd4, cM
@@ -209,6 +228,36 @@ p = enrich_fdr_10 %>%
   )
 
 p
+
+# ----- unique genes for cd8+ sef -----
+library(ggplot2)
+library(patchwork)
+cell_type = "cd8"
+cd8_sef = readRDS(paste0("res_",cell_type,"_p_",p,"_sef_5_1_2026.RDS")) # labeled by date
+
+genes = c("B2M", "CD69", "S100A4","SRGN", "GZMA", "ANXA1")
+
+plots = lapply(genes, function(gene) {
+  group_model_comparison_plot(cd8_sef, gene) +
+    labs(title = gene) +
+    theme(
+      plot.title = element_text(hjust = 0.5, face = "bold"),
+      panel.grid.minor = element_blank()
+    )
+})
+
+combined = wrap_plots(
+  plots, ncol = 3, nrow = 2, guides = "collect"
+) & theme(legend.position = "bottom")
+
+print(combined)
+
+ggsave(
+  filename = "cd8_unique_comparison_2x3.pdf",
+  plot = combined,
+  width = 12,
+  height = 7
+)
 
 
 # ----- argument: unique PB are useless -----
