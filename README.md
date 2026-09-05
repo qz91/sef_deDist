@@ -29,8 +29,8 @@ The simulations section is split into separate `R` files  for distinct functions
 | `lpc_pval_combination_generalized_(ss)_final`  | `.R`   | Direct-moment testing comparison and p-value combination test (ss) at varying sample sizes |
 | `lpc_NB_modality_analysis_final`  | `.R`   | `main` file defining modality-specific functions used in simulations  |
 | `lpc_NB_modal_scaled_SEF_analysis_final`  | `.R`   | Workflow used on computing cluster to conduct SEF framework in empirical FDR test for modality shift |
-| `make_table_5_25_2026_final`  | `.R`   | Code to build table of results and plot the empirical FDR results for mean and variance shift |
-| `make_table_modal_6_16_26_final`  | `.R`   | Code to build table of results and plot the empirical FDR results for modality shift |
+| `make_table_5_25_2026_final`  | `.R`   | Code to build table of results and plot the empirical FDR results for mean and variance shift (Figure 6) |
+| `make_table_modal_6_16_26_final`  | `.R`   | Code to build table of results and plot the empirical FDR results for modality shift (Figure 7b) |
 ---
 
 #### Real Data Analysis
@@ -39,13 +39,12 @@ In the real data analysis section, we provide code to demonstrate the main real 
 
 | File Name | Format     | Description |
 |---------------|----------|------------|
-| `merged_newCov_revisions_RDA_final`      | `.R`  | Runs cell-type specific SEF regression modeling and testing; provides general enrichment analyses across all cell types as well as unique CD8+ enrichment |
-| `revisions_pseudobulk_comparison_5_5_2026`  | `.R`   | Procedural pipeline for pseudobulk methods |
+| `merged_newCov_revisions_RDA_final`      | `.R`  | Runs cell-type specific SEF regression modeling and testing; provides general enrichment analyses across all cell types as well as unique CD8+ enrichment (Figures 1, 2, 4, 5). |
 | `merged_self_contained_RDA_final`  | `.R`   | self-contained `main` file defining functions used in real data analysis and downstream analysis |
-| `run_pseudobulk_final`  | `.R`   | Script to generate results from comparison pseudobulk analysis |
+| `run_pseudobulk_final`  | `.R`   | Script to generate results from comparison pseudobulk analysis. Provides numbers for Table 1, Figure 3. |
 | `prepare_pseudobulk_final`  | `.R`   | Prepare pseudobulk data |
 | `bootstrap_RDA`  | `.R`   | Workflow to reproduce bootstrap analysis of CD8+ T-cells. Results can be found in the subdirectory `RDA/aux_response/cd8_bootstrap_stability` |
-| `b_cells_explore`  | `.R`   | Basic QC metrics for B cells as requested in revisions|
+| `b_cells_explore`  | `.R`   | Basic QC metrics for B cells as requested in revisions |
 
 ---
 
